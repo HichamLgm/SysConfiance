@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simplepdl:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplepdl="http://simplepdl" name="developpement">
+  <ProcessElement xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@ProcessElement.12 //@ProcessElement.13" linksToSuccessors="//@ProcessElement.4 //@ProcessElement.5 //@ProcessElement.6 //@ProcessElement.7" name="Conception">
+    <useresource quantity="1" ressource="//@ProcessElement.14"/>
+  </ProcessElement>
+  <ProcessElement xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@ProcessElement.4 //@ProcessElement.5" name="RedactionDoc">
+    <useresource quantity="1" ressource="//@ProcessElement.14"/>
+  </ProcessElement>
+  <ProcessElement xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@ProcessElement.6" linksToSuccessors="//@ProcessElement.8" name="Programmation">
+    <useresource quantity="1" ressource="//@ProcessElement.14"/>
+  </ProcessElement>
+  <ProcessElement xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@ProcessElement.7 //@ProcessElement.8" name="RedactionTests">
+    <useresource ressource="//@ProcessElement.14"/>
+  </ProcessElement>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" predecessor="//@ProcessElement.0" successor="//@ProcessElement.1"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@ProcessElement.0" successor="//@ProcessElement.1"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" linkType="finishToStart" predecessor="//@ProcessElement.0" successor="//@ProcessElement.2"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" predecessor="//@ProcessElement.0" successor="//@ProcessElement.3"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" linkType="finishToFinish" predecessor="//@ProcessElement.2" successor="//@ProcessElement.3"/>
+  <ProcessElement xsi:type="simplepdl:Guidance" elements="//@ProcessElement.0 //@ProcessElement.3" text="A guidance"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" successor="//@ProcessElement.0"/>
+  <ProcessElement xsi:type="simplepdl:WorkSequence" successor="//@ProcessElement.0"/>
+  <ProcessElement xsi:type="simplepdl:Ressource" name="PC" quantity="10"/>
+</simplepdl:Process>
